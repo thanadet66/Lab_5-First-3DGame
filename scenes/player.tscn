@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://30pc5iqfqmmt"]
+
+[ext_resource type="Script" uid="uid://bn4ifqk5w6b3d" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://di0sff0u1cjhv" path="res://art/Cactoro.fbx" id="2_g2els"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_onrkg"]
+radius = 0.8
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 6
+script = ExtResource("1_onrkg")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122482, 0.249451, -0.997581)
+
+[node name="Cactoro" parent="Pivot" instance=ExtResource("2_g2els")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0449219, 0, 1.16223)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10706, 1.34839, 0.0132332)
+shape = SubResource("SphereShape3D_onrkg")
